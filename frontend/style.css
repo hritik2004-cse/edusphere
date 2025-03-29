@@ -977,3 +977,42 @@ td a:hover{
 #dashboard-body{
   background-color: var(--bg-col);
 }
+
+.product-card{
+  background-color: var(--light-black-col);
+  flex-direction: column;
+  width: 20%;
+  height: auto;
+  padding: var(--font-size-1);
+  border-radius: 1vh;
+  box-shadow: 1vh 1vh 3vh var(--grey-col);
+}
+
+.fa-file, .fa-book, .fa-user-graduate{
+  /* color: var(--main-green); */
+  background-color: var(--main-green);
+  padding: var(--font-size-1);
+  font-size: var(--font-size-2);
+  border-radius: var(--border-radius-2);
+  margin: 1vh 0vh;
+}
+
+.product-card-h2{
+  color: var(--main-green);
+}
+
+.product-card-p{
+  color: var(--white-color);
+}
+
+.product-card-btn{
+  /* width: 100%; */
+  padding: var(--font-size-1);
+  margin-top: 1vh;
+  background-color: var(--main-green);
+  border: none;
+  outline: none;
+  font-size: var(--font-size-1);
+  border-radius: 1vh;
+  /* width: 100%; */
+}

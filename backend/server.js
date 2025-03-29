@@ -21,7 +21,8 @@ app.use(cors());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/ebooks', ebookRoutes);  // Added eBook API routes
-const dashboardRoutes = require("./routes/dashboardRoutes");
+import dashboardRoutes from "./routes/dashboardRoutes.js";
+
 app.use("/api/dashboard", dashboardRoutes);
 
 app.listen(PORT, () => {
