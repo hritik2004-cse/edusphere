@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDUSPHERE</title>
+    <link rel="icon" href="assets/index html assets/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/a9da22d09f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="summarizer-body">
+    <h2 class="main-h2 pointer center capital extended-height">
+      <span class="color-green">AI </span> Text Summarizer
+    </h2>
+    <div class="center">
+        <div id="summarizer-main-div" class="flex">
+            <div class="summerizing-robot-div">
+              <textarea
+                id="inputText"
+                placeholder="Enter text you want to summarize..."
+              ></textarea
+              ><br />
+              <button
+                onclick="summarizeText()"
+                class="main-section-btn pointer capital poppins-semibold"
+                id="summarize-btn"
+              >
+                summarize text
+              </button>
+            </div>
+            <div id="result" class="flex-se">
+              <div class="flex-sb fr">
+                <h4 id="result-h4" class="poppins-semibold capital">result :</h4>
+                <button onclick="copyText()"><i class="fa-solid fa-copy"></i></button>
+                <button onclick="speakText()">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+              <p id="output"></p>
+            </div>
+          </div>
+    </div>
+    <script src="summarizerScript.js"></script>
+  </body>
+</html>

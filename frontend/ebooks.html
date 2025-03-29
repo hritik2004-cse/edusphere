@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDUSPHERE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/index html assets/logo.png" />
+    <script
+      src="https://kit.fontawesome.com/a9da22d09f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="body-ebook">
+    <nav id="ebook-nav" class="flex-se">
+      <div id="logo-section" class="flex-sb pointer">
+        <img src="assets/asset-1/logo.png" alt="" id="logo-img" />
+        <h2 id="logo-h2" class="upper">
+          <span class="color-green">e</span>dusphere
+        </h2>
+      </div>
+      <div id="nav-elements-div" class="flex-se">
+        <div class="nav-contents-div">
+          <a href="" class="nav-contents capital pointer poppins-medium"
+            >courses <i class="fa-solid fa-caret-down"></i
+          ></a>
+        </div>
+
+        <a href="" class="nav-contents capital pointer poppins-medium"
+          >roadmap</a
+        >
+        <a href="" class="nav-contents capital pointer poppins-medium"
+          >live classes</a
+        >
+        <a href="quiz1.html" class="nav-contents capital pointer poppins-medium"
+          >quiz</a
+        >
+        <div class="nav-contents-others">
+          <a href="" class="nav-contents capital pointer poppins-medium"
+            >other services <i class="fa-solid fa-caret-down"></i
+          ></a>
+          <ul id="other-services-list">
+            <li class="pointer capital poppins-medium">
+              <a href="ebooks.html">free ebooks</a>
+            </li>
+            <li class="pointer capital poppins-medium">
+              <a href="#">video download</a>
+            </li>
+            <li class="pointer capital poppins-medium">
+              <a href="#">notes</a>
+            </li>
+            <li class="pointer capital poppins-medium">
+              <a href="#">PYQs</a>
+            </li>
+            <li class="pointer capital poppins-medium">
+              <a href="#">blogs</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="main-btn-div" class="flex-sb">
+        <a href="login.html" class="nav-contents-btn" id="authAction">
+          <button class="capital pointer poppins-semibold main-section-btn">
+            login
+          </button>
+        </a>
+        <a href="register.html" class="nav-contents-btn">
+          <button class="capital pointer poppins-semibold" id="register-btn">
+            register
+          </button>
+        </a>
+      </div>
+      <ul>
+        <li id="userGreeting"></li>
+      </ul>
+    </nav>
+    <header>
+      <h1 id="ebook-h1" class="capital center poppins-extrabold pointer">
+        <span class="color-green">eBook</span> Library
+      </h1>
+      <div id="ebook-search-section" class="flex">
+        <div id="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by title or author..."
+            aria-label="Search eBooks by title or author"
+          />
+          <button id="searchButton" class="pointer">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+      <div class="filter-container pointer flex">
+        <select aria-label="select a category" id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="AI">Artificial Intelligence</option>
+          <option value="ML">Machine Learning</option>
+          <option value="Web">Web Development</option>
+          <option value="DSA">Data Structures &#38 Algorithms</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="Networking">Networking</option>
+          <option value="DBMS">Database Management</option>
+        </select>
+      </div>
+    </header>
+    <div id="ebook-container"></div>
+    <!-- upload section -->
+    <section id="upload-section">
+      <h2 class="upload-h2 pointer poppins-semibold capital center">Upload <span class="color-green">eBook</span></h2>
+      <div class="flex-se">
+        <img src="assets/ebooks/upload.png" alt="upload img" id="upload-img">
+        <div class="flex-se" id="upload-div">
+          <form id="uploadForm">
+            <input type="text" id="bookTitle" placeholder="Book Title" required /><br>
+            <input type="text" id="bookAuthor" placeholder="Author" required />
+            <select aria-label="select a category" id="bookCategory">
+              <option value="AI">Artificial Intelligence</option>
+              <option value="ML">Machine Learning</option>
+              <option value="Web">Web Development</option>
+              <option value="DSA">Data Structures &#38 Algorithms</option>
+              <option value="Cybersecurity">Cybersecurity</option>
+              <option value="Networking">Networking</option>
+              <option value="DBMS">Database Management</option>
+            </select>
+            <input type="file" id="bookFile" class="custom-file-input" required hidden />
+            <div class="flex upload-div">
+              <label for="bookFile" class="custom-file-label"><i class="fa-solid fa-file-arrow-up"></i> Upload File</label>
+              <p id="file-name">No file chosen</p>
+            </div>
+            <button type="submit" id="upload-btn" class="capital poppins-extrabold pointer"><i class="fa-solid fa-arrow-up-from-bracket"></i> Upload</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- ebooks list -->
+    <section id="ebooks-list"></section>
+    <div id="errorMessage" class="hidden">
+      <p>No books found. Try another search.</p>
+    </div>
+    <!-- ebook section footer -->
+    <footer class="flex-se">
+      <div class="copyright-info-div flex-se">
+        <!-- main table -->
+        <table>
+          <!-- main row -->
+          <tr>
+            <th>
+              <h2 class="footer-h2 capital poppins-extrabold">important <span class="color-green"> links</span></h2>
+            </th>
+            <th>
+              <h2 class="footer-h2 capital poppins-extrabold">social media <span class="color-green"> links</span></h2>
+            </th>
+            <th>
+              <h2 class="footer-h2 capital poppins-extrabold pointer">contact us</h2>
+            </th>
+          </tr>
+          <!-- row 1 -->
+          <tr>
+            <td>
+              <a href="index.html" class="imp-links capital pointer poppins-medium">home</a>
+            </td>
+            <td>
+              <a href="" class="capital pointer poppins-medium"><i class="fa-brands fa-linkedin-in"></i> linkedin</a>
+            </td>
+            <td>
+              <a href="tel:0123456789"><i class="fa-solid fa-phone"></i> 0123456789</a>
+            </td>
+          </tr>
+          <!-- row 2 -->
+          <tr>
+            <td>
+              <a href="quiz1.html" class="imp-links capital pointer poppins-medium">quiz</a>
+            </td>
+            <td>
+              <a href="" class="capital pointer poppins-medium"><i class="fa-brands fa-instagram"></i> instagram</a>
+            </td>
+            <td>
+              <a href="mailto:support@edusphere.in"><i class="fa-solid fa-envelope"></i> support@edusphere.in</a>
+            </td>
+          </tr>
+          <!-- row 3 -->
+          <tr>
+            <td>
+              <a href="roadmaps.html" class="imp-links capital pointer poppins-medium">roadmaps</a>
+            </td>
+            <td>
+              <a href="" class="capital pointer poppins-medium"><i class="fa-brands fa-facebook-f"></i> facebook</a>
+            </td>
+            <td>
+              <h2 class="footer-h2 capital poppins-extrabold center">other <span class="color-green"> links</span></h2>
+            </td>
+          </tr>
+          <!-- row 4 -->
+          <tr>
+            <td>
+              <a href="" class="imp-links capital pointer poppins-medium">video downloader</a>
+            </td>
+            <td>
+              <a href="" class="capital pointer poppins-medium"><i class="fa-brands fa-telegram"></i> telegram</a>
+            </td>
+            <td>
+              <a href="https://forms.gle/ABRGzzBJKwDbZPC88" target="_blank" rel="noopener" class="pointer capital">feedback</a>
+            </td>
+          </tr>
+          <!-- row 5 -->
+          <tr>
+            <td>
+              <a href="summarizer.html" class="imp-links capital pointer poppins-medium">text summarizer</a>
+            </td>
+            <td>
+              <a href="" class="capital pointer poppins-medium"><i class="fa-brands fa-discord"></i> discord</a>
+            </td>
+            <td>
+              <a href="privacyPolicy.txt" download="privacyPolicy" class="pointer capital">privacy Policy</a>
+            </td>
+          </tr>
+          <!-- row 6 -->
+          <tr>
+            <td>
+              <a href="#top" class="imp-links capital pointer poppins-medium">go to top</a>
+            </td>
+            <td>
+              <a href="" class="capital pointer poppins-medium"><i class="fa-brands fa-youtube"></i> youtube</a>
+            </td>
+          </tr>
+          <!-- row 7 -->
+          <tr>
+            <td>
+              <a href="#upload-section" class="imp-links capital pointer poppins-medium">upload an ebook</a>
+            </td>
+          </tr>
+        </table>
+         <!-- newsletter section html -->
+         <div id="newsletter-div">
+          <h2 id="newsletter-h2" class="capital center poppins-semibold">newsletter</h2>
+          <label for="newsletter-email" class="newsletter-label capital poppins-medium  ">subscribe to our newsletter to get all latest updates 😊.</label>
+          <div id="newsletter-email-div" class="flex">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+          </div>
+          <p id="message"></p>
+          <button id="newsletter-btn" onclick="sendEmail()" type="submit" class="capital pointer poppins-semibold">subscribe</button>
+        </div>
+      </div>
+       
+      <hr id="black-hr">
+      <p class="copyright-p capital pointer center poppins-medium">&copy; 
+        <span id="year"></span>  Edusphere. all rights reserved
+      </p>
+    </footer>
+    <!-- script for changing file name when user choose a file -->
+    <script>
+      document.getElementById("bookFile").addEventListener("change", function () {
+      const fileName = this.files.length > 0 ? this.files[0].name : "No file chosen";
+      document.getElementById("file-name").textContent = fileName;
+});
+    </script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- script for sending email through email.js -->
+    <script>
+      (function() {
+        emailjs.init("AEygB-JfBDs4VCJFe");
+      })();
+
+      function sendEmail() {
+        let emailInput = document.getElementById("newsletter-email").value;
+        let message = document.getElementById("message");
+
+        if (!emailInput) {
+            message.innerHTML = "❌ Please enter a valid email!";
+            message.style.color = "red";
+            return;
+        }
+
+        let templateParams = {
+            user_email: emailInput 
+        };
+
+        emailjs.send("service_1wfv9ng", "template_fsmhvu9", templateParams)
+            .then(function(response) {
+                message.innerHTML = "✅ Thank you for subscribing!";
+                message.style.color = "green";
+                document.getElementById("newsletter-email").value = "";
+            }, function(error) {
+                message.innerHTML = "❌ Subscription failed. Try again!";
+                message.style.color = "red";
+                console.error("EmailJS Error:", error);
+            });
+    }
+</script>
+    <!-- script to update year -->
+    <script>
+      let date = new Date();
+      let spanYear = document.getElementById("year");
+      let year = date.getFullYear();
+      spanYear.innerText= year;
+    </script>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/ebook.js"></script>
+  </body>
+</html>
