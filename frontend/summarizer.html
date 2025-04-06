@@ -19,7 +19,8 @@
         <div id="summarizer-main-div" class="flex">
             <div class="summerizing-robot-div">
               <textarea
-                id="inputText"
+              style="color: var(--main-green);"
+                id="text-input"
                 placeholder="Enter text you want to summarize..."
               ></textarea
               ><br />
@@ -31,7 +32,7 @@
                 summarize text
               </button>
             </div>
-            <div id="result" class="flex-se">
+            <div id="result" class="flex-se" style="color: var(--main-green);">
               <div class="flex-sb fr">
                 <h4 id="result-h4" class="poppins-semibold capital">result :</h4>
                 <button onclick="copyText()"><i class="fa-solid fa-copy"></i></button>
@@ -39,10 +40,12 @@
                   <i class="fa-solid fa-volume-high"></i>
                 </button>
               </div>
-              <p id="output"></p>
+              <p id="summary-output"></p>
             </div>
           </div>
     </div>
+
+    <!-- ✅ Corrected JavaScript Reference -->
     <script src="summarizerScript.js"></script>
   </body>
 </html>

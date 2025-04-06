@@ -1,53 +1,57 @@
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("summarize-btn").addEventListener("click", summarizeText);
+});
+
 async function summarizeText() {
-    const inputText = document.getElementById("inputText").value;
-    if (!inputText) {
-        alert("Please enter some text.");
-        return;
+  const inputElement = document.getElementById("text-input");
+
+  if (!inputElement) {
+    console.error("Element with id 'text-input' not found!");
+    return;
+  }
+
+  const inputText = inputElement.value.trim();
+
+  if (!inputText) {
+    alert("Please enter text to summarize!");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:5000/api/summarizer/summarize", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: inputText }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to summarize text");
     }
 
-    const apiKey = "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"; // Replace with your actual API key
-    const apiUrl = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn";
+    const data = await response.json();
+    document.getElementById("summary-output").innerText = data.summary;
 
-    try {
-        const response = await fetch(apiUrl, {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${apiKey}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ inputs: inputText })
-        });
-
-        const result = await response.json();
-        console.log(result);
-        
-        if (result.error) {
-            document.getElementById("output").innerText = "Error: " + result.error;
-        } else {
-            document.getElementById("output").innerText = result[0].summary_text;
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        document.getElementById("output").innerText = "Failed to fetch data.";
-    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Error summarizing text. Check console for details.");
+  }
 }
 
-function copyText() {
-    const text = document.getElementById("output").innerText;
-    if (!text) {
-        alert("No summarized text to copy!");
-        return;
-    }
-    navigator.clipboard.writeText(text);
-    alert("Copied to clipboard!");
-}
 
-function speakText() {
+  
+  // Copy function
+  function copyText() {
+    const outputText = document.getElementById("output").innerText;
+    navigator.clipboard.writeText(outputText).then(() => {
+      alert("Text copied to clipboard!");
+    });
+  }
+  
+  // Text-to-Speech function
+  function speakText() {
     const text = document.getElementById("output").innerText;
-    if (!text) {
-        alert("No summarized text to speak!");
-        return;
-    }
     const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-US";
     window.speechSynthesis.speak(speech);
-}
+  }
+  

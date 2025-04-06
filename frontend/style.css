@@ -507,14 +507,7 @@ body{
 
 .other-points-p {
   color: var(--main-green);
-  font-size:2.6vh;
-  letter-spacing: 1;
-  line-height: 2;
-  
-}
-
-#bg-1{
-  
+  font-size:var(--font-size-2);
 }
 
 /* ebook section css starts here */
@@ -944,11 +937,14 @@ td a:hover{
   font-size: var(--font-size-1);
   outline: none;
   border: none;
-  color: var(--main-green);
+  /* color: var(--main-green); */
   background-color: transparent;
   /* border: 0.3vh solid var(--main-green); */
   border-radius: 2vh;
   padding: var(--btn-padding-1);
+}
+#text-input{
+  color: var(--main-green);
 }
 
 .extended-height {
@@ -978,31 +974,45 @@ td a:hover{
   background-color: var(--bg-col);
 }
 
+#product-section-main-div{
+  width: 100%;
+  height: 70vh;
+}
+
 .product-card{
   background-color: var(--light-black-col);
   flex-direction: column;
-  width: 20%;
+  width: 25%;
   height: auto;
   padding: var(--font-size-1);
   border-radius: 1vh;
   box-shadow: 1vh 1vh 3vh var(--grey-col);
 }
 
+.product-card a{
+  text-decoration: none;
+  width: 100%;
+}
+
 .fa-file, .fa-book, .fa-user-graduate{
   /* color: var(--main-green); */
-  background-color: var(--main-green);
+  background-color: var(--white-color);
   padding: var(--font-size-1);
   font-size: var(--font-size-2);
   border-radius: var(--border-radius-2);
   margin: 1vh 0vh;
+  color: var(--light-black-col);
 }
 
 .product-card-h2{
   color: var(--main-green);
+  font-size: var(--font-size-2);
 }
 
 .product-card-p{
-  color: var(--white-color);
+  color: var(--grey-col-2);
+  font-size: var(--font-size-1);
+  margin: 1vh 0vh;
 }
 
 .product-card-btn{
@@ -1014,5 +1024,23 @@ td a:hover{
   outline: none;
   font-size: var(--font-size-1);
   border-radius: 1vh;
-  /* width: 100%; */
+  width: 100%;
+}
+
+.product-card-btn:hover{
+  background-color: var(--main-green-hover);
+  color: var(--bg-col);
+}
+
+#intro-img{
+  height: 70vh;
+  /* width: ; */
+  filter: drop-shadow(0px 0px 5vh var(--main-green));
+  object-fit: cover;
+}
+
+.intro-content{
+  color: var(--grey-col-2);
+  font-size: var(--font-size-2);
+  width: 40%;
 }

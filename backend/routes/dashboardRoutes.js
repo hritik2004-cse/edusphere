@@ -1,7 +1,8 @@
-const express = require("express");
-const multer = require("multer");
-const User = require("../models/User");
-const bcrypt = require("bcryptjs");
+import express from "express";
+import multer from "multer";
+import bcrypt from "bcryptjs";
+import User from "../models/User.js";  // ✅ Ensure the correct file extension
+
 const router = express.Router();
 
 // Multer configuration for image uploads
@@ -37,4 +38,4 @@ router.post("/update", upload.single("profilePicture"), async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router; // ✅ Use ES module syntax
